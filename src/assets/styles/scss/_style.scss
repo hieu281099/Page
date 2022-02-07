@@ -1,0 +1,97 @@
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.row {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.text-middle {
+
+  @media screen and (max-width: 771px) {
+    text-align: center !important;
+  }
+}
+
+.section-title {
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 36px;
+
+  &--underline {
+    &::before {
+      content: "";
+      background: url('../../src/assets/images/underline.png') no-repeat;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 87px;
+      height: 16px;
+    }
+
+    &--white {
+      &::before {
+        background: url('../../src/assets/images/underline-white.png') no-repeat;
+      }
+    }
+  }
+}
+
+//Styles item & button carousel
+
+.control {
+  color: $gray-500;
+  border: .5px solid $gray-500;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 40%;
+  transform: translateY(-50%);
+  display: none;
+
+  &:hover {
+    color: $white;
+    background-color: $orange;
+    border: none;
+  }
+
+  &--left {
+    left: -36px;
+    animation: buttonLeft .5s ease;
+  }
+
+  &--right {
+    right: -36px;
+    animation: buttonRight .5s ease;
+  }
+}
+
+.btn-view {
+  color: $gray-800;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: $white;
+    background: $orange;
+  }
+}
